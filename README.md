@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ⚛️ Projekt - Typescript und React
 
-Currently, two official plugins are available:
+Willkommen zu unserem Projekt! Dieses Repository enthält eine grundlegende React-Typescript App für eine moderne Webanwendung, die mit Vite entwickelt wurde. Wir verwenden eine Pipeline, um die Entwicklung zu optimieren, und stellen das Projekt über eine Docker-Registry als Image bereit, um es nahtlos in einer Live-Umgebung zu deployen.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Verwendete Technologien
 
-## Expanding the ESLint configuration
+- **Vite** - Ein super schnelles Build-Tool für moderne Webanwendungen.
+- **TypeScript** - Für statische Typisierung und eine sichere Code-Basis.
+- **Docker** - Containerisiert die Anwendung, um die lokale Entwicklungsumgebung zu vereinheitlichen.
+  
+## 🚀 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Voraussetzungen
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Node.js** (>=v16)
+- **Docker** (optional, falls du die Anwendung in einem Container ausführen möchtest)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Schritte zur Einrichtung
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Klonen des Repositories:**
+   ```bash
+   git clone https://github.com/nibora/react-typescript-project.git
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Abhängigkeiten installieren:**
+   Navigiere in das Projektverzeichnis und installiere alle benötigten Abhängigkeiten:
+   ```bash
+   cd react-typescript-project
+   npm install
+   ```
+
+3. **Entwicklungsumgebung starten:**
+   Starte die Anwendung im Entwicklungsmodus:
+   ```bash
+   npm run dev
+   ```
+
+   Der Server läuft nun auf [http://localhost:3000](http://localhost:3000).
+
+
+## 🌐 Live-Demo & Docker Image
+
+Es gibt auch eine **aktuelle Online-Version** der Anwendung, die unter [https://robinsandbox.dev](https://robinsandbox.dev) erreichbar ist.
+
+Falls du die Anwendung direkt aus einer Registry verwenden möchtest, kannst du das Docker-Image einfach herunterladen und ausführen:
+
+```bash
+docker pull rockerdock/react-app
+docker run -p 3000:3000 rockerdock/react-app:latest
 ```
